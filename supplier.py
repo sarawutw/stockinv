@@ -80,7 +80,7 @@ class supplierClass:
         self.SupplierTable.heading("invoice",text="INVOICE")
         self.SupplierTable.heading("name",text="NAME")
         self.SupplierTable.heading("contact",text="CONTACT")
-        self.SupplierTable.heading("desc",text="DESCTRIPTIONS")
+        self.SupplierTable.heading("desc",text="DESCRIPTIONS")
 
         self.SupplierTable["show"] = "headings"
 
@@ -92,7 +92,8 @@ class supplierClass:
         self.SupplierTable.bind("<ButtonRelease-1>",self.get_data)
 
         self.show()
-# =================================================================
+
+# ====================== Functions =============================
 
     def add(self):
         con = sqlite3.connect(database=r'ims.db')
@@ -117,7 +118,7 @@ class supplierClass:
                     self.show()
 
         except Exception as ex:
-            messagebox.showerror("Error",f"Error due to : {str(ex)}")
+            messagebox.showerror("Error",f"Error due to : {str(ex)}",parent=self.root)
 
     def show(self):
         con = sqlite3.connect(database=r'ims.db')
